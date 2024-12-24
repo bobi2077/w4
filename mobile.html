@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Development Services - Mobile</title>
+    <link rel="stylesheet" href="mobile.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <img src="images/default-logo.png" alt="Logo">
+    </div>
+    <button class="menu-toggle" onclick="openPanel()">☰</button>
+</header>
+
+<div class="overlay" id="overlay" onclick="closePanel()"></div>
+
+<div class="side-panel" id="sidePanel">
+    <button class="close-btn" onclick="closePanel()">✖</button>
+    <div class="panel-content">
+        <div class="icon" onclick="window.location.href='index.html'">
+            <img src="images/responsive-desktop.png" alt="Desktop">
+            <p>Desktop</p>
+        </div>
+        <div class="icon" onclick="window.location.href='mobile.html'">
+            <img src="images/responsive-phone.png" alt="Mobile">
+            <p>Mobile</p>
+        </div>
+    </div>
+</div>
+
+<main>
+    <section class="intro">
+        <h1>Development Services</h1>
+        <p>Sample text. Click to select the text box. Click again or double click to start editing the text.</p>
+    </section>
+
+    <section class="services">
+        <div class="service-card">
+            <img src="images/sphere.png" alt="App Development Icon">
+            <h2>App Development</h2>
+            <p>Sample text. Click to select the text box. Click again or double-click to start editing the text.</p>
+            <button class="more-btn" onclick="toggleCard(this)">More</button>
+            <button class="less-btn" onclick="toggleCard(this)">Less</button>
+            <div class="less-content" style="display: none;">
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
+                    and scrambled it to make a type specimen book. It has survived not only five centuries, but also the
+                    leap into electronic typesetting, remaining essentially unchanged.</p>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <img src="images/triangle.png" alt="Web Development Icon">
+            <h2>Web Development</h2>
+            <p>Sample text. Click to select the text box. Click again or double-click to start editing the text.</p>
+            <button class="more-btn" onclick="toggleCard(this)">More</button>
+            <button class="less-btn" onclick="toggleCard(this)">Less</button>
+            <div class="less-content" style="display: none;">
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
+                    and scrambled it to make a type specimen book. It has survived not only five centuries, but also the
+                    leap into electronic typesetting, remaining essentially unchanged.</p>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <img src="images/napivBublyk.png" alt="UX/UI Design Icon">
+            <h2>UX/UI Design</h2>
+            <p>Sample text. Click to select the text box. Click again or double-click to start editing the text.</p>
+            <button class="more-btn" onclick="toggleCard(this)">More</button>
+            <button class="less-btn" onclick="toggleCard(this)">Less</button>
+            <div class="less-content" style="display: none;">
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
+                    and scrambled it to make a type specimen book. It has survived not only five centuries, but also the
+                    leap into electronic typesetting, remaining essentially unchanged.</p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>Sample text. Click to select Text Element</p>
+</footer>
+
+<script>
+    function openPanel() {
+        document.getElementById("sidePanel").style.height = "50vh";
+        document.getElementById("overlay").style.display = "block";
+    }
+
+    function closePanel() {
+        document.getElementById("sidePanel").style.height = "0";
+        document.getElementById("overlay").style.display = "none";
+    }
+
+    function toggleCard(button) {
+        const card = button.closest('.service-card');
+        card.classList.toggle("expanded");
+        const lessBtn = card.querySelector('.less-btn');
+        const moreBtn = card.querySelector('.more-btn');
+        const lessContent = card.querySelector('.less-content');
+
+        if (button.classList.contains('more-btn')) {
+            moreBtn.style.display = 'none';
+            lessBtn.style.display = 'block';
+            lessContent.style.display = 'block';
+        } else {
+            moreBtn.style.display = 'block';
+            lessBtn.style.display = 'none';
+            lessContent.style.display = 'none';
+        }
+    }
+</script>
+</body>
+</html>
